@@ -1,0 +1,12 @@
+.botaoLogin {
+	background: rgba(218, 1, 117, 0.35);
+	border-radius: 20px;
+	border-style: none;
+	font-weight: 600;
+	color: white;
+	padding: 0.8em 3em;
+}
+
+.botaoLogin:focus {
+	outline: none;
+}
