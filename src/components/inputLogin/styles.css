@@ -1,0 +1,16 @@
+.labelInput {
+	font-weight: 600;
+	width: 100%;
+}
+
+.labelInput input:first-of-type {
+	border: none;
+	border-bottom: 1px solid black;
+	padding: 1em;
+	width: 100%;
+}
+
+
+.labelInput input:focus {
+	outline: none;
+}
