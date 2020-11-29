@@ -8,11 +8,12 @@ import { fazerRequisicaoComBody } from '../../utils/requisicoes';
 
 import logo from '../../assets/images/logo.png';
 import './styles.css';
+import { ContextoToken } from '../../App';
 
-export function LoginPage(props) {
+export function LoginPage() {
 	const currentPath = useLocation().pathname;
 	const [senhaExposta, setSenhaExposta] = React.useState(false);
-	const { token, setToken } = props;
+	const { token, setToken } = React.useContext(ContextoToken);
 
 	const { register, handleSubmit } = useForm();
 
