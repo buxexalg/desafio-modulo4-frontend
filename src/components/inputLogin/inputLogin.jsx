@@ -1,4 +1,5 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 
 import { InputMostrarSenha } from '../../components/inputMostrarSenha/inputMostrarSenha';
 
@@ -12,8 +13,9 @@ export function InputLogin(props) {
 				type={props.type}
 				name={props.name}
 				placeholder={props.placeholder}
+				ref={props.register}
 			/>
-			{props.name === 'password' && (
+			{props.name === 'senha' && (
 				<InputMostrarSenha
 					senhaExposta={props.senhaExposta}
 					setSenhaExposta={props.setSenhaExposta}
