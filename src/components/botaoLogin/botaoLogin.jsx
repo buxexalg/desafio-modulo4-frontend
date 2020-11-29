@@ -3,7 +3,7 @@ import './styles.css';
 
 export function BotaoLogin(props) {
 	return (
-		<button className="botaoLogin" type="submit">
+		<button id={props.id} className="botaoLogin" type="submit">
 			{props.conteudo}
 		</button>
 	);
