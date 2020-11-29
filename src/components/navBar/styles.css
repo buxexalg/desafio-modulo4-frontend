@@ -1,0 +1,27 @@
+.navBar {
+	display: flex;
+	flex-direction: column;
+	background-color: #263238;
+	width: 15%;
+}
+
+.navBar > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 50vh;
+}
+
+.navBar > div > img {
+	align-self: center;
+	margin-top: 2em;
+}
+
+.navBar ul {
+	margin: 0;
+	padding: 0;
+}
+
+#botaoCobranca {
+	margin: 0 1.5em;
+}
