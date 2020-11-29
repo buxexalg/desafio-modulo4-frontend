@@ -10,3 +10,7 @@
 .botaoLogin:focus {
 	outline: none;
 }
+
+.botaoLogin:hover {
+	cursor: pointer;
+}
