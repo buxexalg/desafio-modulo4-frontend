@@ -1,41 +1,29 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { BotaoLogin } from '../../components/botaoLogin/botaoLogin';
 import { IconeUsuario } from '../../components/iconeUsuario/iconeUsuario';
 import { useForm } from 'react-hook-form';
 
 import { fazerRequisicaoComBody } from '../../utils/requisicoes';
 
-import logo from '../../assets/images/logo.png';
+import { HeaderHome } from '../../components/headerHome/headerHome';
+
 import './styles.css';
+import { ContextoToken } from '../../App';
+import { NavBar } from '../../components/navBar/navBar';
 
 export function HomePage(props) {
-	const { token, setToken } = props;
+	const { token, setToken } = React.useContext(ContextoToken);
 
 	return (
-		<>
-			<div className="navBar">
-				<img src={logo} alt="Logo Academy" />
-				<nav>
-					<ul>
-						<li>
-							<Link to="/home">Home</Link>
-						</li>
-						<li>
-							<Link to="/cobrancas">Cobranças</Link>
-						</li>
-						<li>
-							<Link to="/clientes">Clientes</Link>
-						</li>
-					</ul>
-				</nav>
-				<BotaoLogin conteudo="Criar cobrança" />
+		<div className="home">
+			<NavBar />
+			<div className="conteudoHome">
+				<HeaderHome />
+				<div>
+					
+				</div>
 			</div>
-			<div className="conteudoHome"></div>
-			<div className="usuario">
-				<IconeUsuario />
-			</div>
-		</>
+		</div>
 	);
 }
