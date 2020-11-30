@@ -9,8 +9,9 @@ import cobrancas from '../../assets/images/cobrancas.png';
 import home from '../../assets/images/home.png';
 
 import './styles.css';
+import { Link } from 'react-router-dom';
 
-export function NavBar(props) {
+export function NavBar() {
 	return (
 		<div className="navBar">
 			<div>
@@ -20,24 +21,26 @@ export function NavBar(props) {
 						<LinkNav
 							src={clientes}
 							alt={'Link para Home'}
-							to="/home"
+							link="/home"
 							textoLink="HOME"
 						/>
 						<LinkNav
 							src={cobrancas}
 							alt={'Link para Cobranças'}
-							to="/cobrancas"
+							link="/cobrancas"
 							textoLink="COBRANÇAS"
 						/>
 						<LinkNav
 							src={home}
 							alt={'Link para Clientes'}
-							to="/clientes"
+							link="/clientes"
 							textoLink="CLIENTES"
 						/>
 					</ul>
 				</nav>
-				<BotaoLogin id="botaoCobranca" conteudo="Criar cobrança" />
+				<Link to="/criar-cobranca" id="containerBotao">
+					<BotaoLogin id="botaoCobranca" conteudo="Criar cobrança" />
+				</Link>
 			</div>
 		</div>
 	);
