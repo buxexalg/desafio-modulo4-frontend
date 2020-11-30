@@ -1,0 +1,28 @@
+.inputComponenteBusca {
+	background-color: #f7f7f7;
+	color: #868686;
+	border: 1px solid #374952;
+	border-radius: 8px;
+	display: flex;
+	width: 100%;
+	padding: 0.8em 0 0.8em 1.5em;
+}
+
+input[type='image'] {
+	max-width: 16px;
+	max-height: 16px;
+	vertical-align: middle;
+	margin: auto 0 auto -5em;
+	z-index: 2000000000000000;
+}
+
+input[type='submit'] {
+	background: #374952;
+	border-radius: 8px;
+	color: white;
+	height: 100%;
+	border: 1px solid #374952;
+	padding-left: 2em;
+	margin-left: -1.7em;
+	cursor: pointer;
+}

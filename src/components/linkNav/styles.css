@@ -1,9 +1,17 @@
 .linkNav {
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	align-items: flex-end;
 	width: 100%;
 	padding: 1em 3em;
+}
+
+.linkNav img {
+	margin-left: 2em;
+}
+
+.linkNav span {
+	padding-left: 1em;
 }
 
 .linkNav:hover {
@@ -16,10 +24,3 @@
 	cursor: pointer;
 }
 
-.linkNav a {
-	text-decoration: none;
-	color: white;
-	font-weight: 700;
-	font-size: 12px;
-	padding-left: 1.3em;
-}
