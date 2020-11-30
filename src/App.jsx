@@ -4,6 +4,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { LoginPage } from './pages/Login';
 import { HomePage } from './pages/Home';
+import { Cobrancas } from './pages/Cobrancas';
 
 export const ContextoToken = React.createContext();
 
@@ -19,7 +20,8 @@ export default function App() {
 							path={['/', '/cadastro', '/recuperar-senha']}
 							component={LoginPage}
 						/>
-						<Route exact path="/home"  component={HomePage} />
+						<Route exact path="/home" component={HomePage} />
+						<Route exact path="/cobrancas" component={Cobrancas} />
 						{/* <Route path="*" render={() => <h1>404</h1>} /> */}
 					</ContextoToken.Provider>
 				</Switch>
