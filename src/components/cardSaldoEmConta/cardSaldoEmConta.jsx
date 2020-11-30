@@ -4,7 +4,7 @@ import iconeSaldo from '../../assets/images/saldo.png';
 
 import './styles.css';
 
-export function CardSaldoEmConta(props) {
+export function CardSaldoEmConta() {
 	const [saldo, setSaldo] = React.useState('0');
 
 	return (
