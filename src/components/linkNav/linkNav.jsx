@@ -6,9 +6,11 @@ import './styles.css';
 
 export function LinkNav(props) {
 	return (
-		<li className="linkNav">
-			<img src={props.src} alt={props.alt} />
-			<Link to={props.link}>{props.textoLink}</Link>
-		</li>
+		<Link to={props.link}>
+			<li className="linkNav">
+				<img src={props.src} alt={props.alt} />
+				<span>{props.textoLink}</span>
+			</li>
+		</Link>
 	);
 }
