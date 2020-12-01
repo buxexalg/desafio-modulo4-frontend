@@ -3,6 +3,7 @@
 	flex-direction: column;
 	background-color: #263238;
 	width: 15%;
+	height: 100vh;
 }
 
 .navBar > div {
@@ -39,3 +40,6 @@
 	display: flex;
 	align-self: center;
 }
+ /*
+ calc vh vh + em
+ */
