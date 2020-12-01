@@ -5,6 +5,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { LoginPage } from './pages/Login';
 import { HomePage } from './pages/Home';
 import { Cobrancas } from './pages/Cobrancas';
+import { Clientes } from './pages/Clientes';
+import { CriarCobranca } from './pages/CriarCobranca';
 
 export const ContextoToken = React.createContext();
 
@@ -22,6 +24,12 @@ export default function App() {
 						/>
 						<Route exact path="/home" component={HomePage} />
 						<Route exact path="/cobrancas" component={Cobrancas} />
+						<Route
+							exact
+							path="/criar-cobranca"
+							component={CriarCobranca}
+						/>
+						<Route exact path="/clientes" component={Clientes} />
 						{/* <Route path="*" render={() => <h1>404</h1>} /> */}
 					</ContextoToken.Provider>
 				</Switch>
