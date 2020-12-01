@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 
 import { fazerRequisicaoComBody } from '../../utils/requisicoes';
@@ -9,6 +8,7 @@ import './styles.css';
 import { ContextoToken } from '../../App';
 import { NavBar } from '../../components/navBar/navBar';
 import { InputBusca } from '../../components/inputBusca/inputBusca';
+import { CardRelatorioCobrancas } from '../../components/cardRelatorioCobrancas/cardRelatorioCobrancas';
 
 export function Cobrancas() {
 	const { token, setToken } = React.useContext(ContextoToken);
@@ -37,7 +37,104 @@ export function Cobrancas() {
 					</div>
 					<div className="conteudoListaDeCobrancas">
 						<div className="headerListaDeCobrancas">
-							
+							<table>
+								<tr>
+									<th>Cliente</th>
+									<th>Descrição</th>
+									<th>Valor</th>
+									<th>Status</th>
+									<th>Vencimento</th>
+									<th>Boleto</th>
+								</tr>
+							</table>
+						</div>
+						<div className="cobrancasListaDeCobrancas">
+							<table>
+								<CardRelatorioCobrancas
+									cliente="Fulano da Silva"
+									descricao="100 coxinhas"
+									valor="100000"
+									status="PAGO"
+									vencimento="10/10/2021"
+								/>
+								<CardRelatorioCobrancas
+									cliente="Fulano da Silva"
+									descricao="100 coxinhas"
+									valor="100000"
+									status="AGUARDANDO"
+									vencimento="10/10/2021"
+								/>
+								<CardRelatorioCobrancas
+									cliente="Fulano da Silva"
+									descricao="100 coxinhas"
+									valor="100000"
+									status="VENCIDO"
+									vencimento="10/10/2021"
+								/>
+								<CardRelatorioCobrancas
+									cliente="Fulano da Silva"
+									descricao="100 coxinhas"
+									valor="100000"
+									status="AGUARDANDO"
+									vencimento="10/10/2021"
+								/>
+								<CardRelatorioCobrancas
+									cliente="Fulano da Silva"
+									descricao="100 coxinhas"
+									valor="100000"
+									status="PAGO"
+									vencimento="10/10/2021"
+								/>
+								<CardRelatorioCobrancas
+									cliente="Fulano da Silva"
+									descricao="100 coxinhas"
+									valor="100000"
+									status="VENCIDO"
+									vencimento="10/10/2021"
+								/>
+								<CardRelatorioCobrancas
+									cliente="Fulano da Silva"
+									descricao="100 coxinhas"
+									valor="100000"
+									status="PAGO"
+									vencimento="10/10/2021"
+								/>
+								<CardRelatorioCobrancas
+									cliente="Fulano da Silva"
+									descricao="100 coxinhas"
+									valor="100000"
+									status="VENCIDO"
+									vencimento="10/10/2021"
+								/>
+								<CardRelatorioCobrancas
+									cliente="Fulano da Silva"
+									descricao="100 coxinhas"
+									valor="100000"
+									status="PAGO"
+									vencimento="10/10/2021"
+								/>
+								<CardRelatorioCobrancas
+									cliente="Fulano da Silva"
+									descricao="100 coxinhas"
+									valor="100000"
+									status="PAGO"
+									vencimento="10/10/2021"
+								/>
+							</table>
+						</div>
+					</div>
+					<div className="paginacao">
+						<div>
+							<span>{'<'}</span>
+							<span>1</span>
+							<span>1</span>
+							<span>1</span>
+							<span>1</span>
+							<span>1</span>
+							<span>1</span>
+							<span>1</span>
+							<span>1</span>
+							<span>{'>'}</span>
 						</div>
 					</div>
 				</div>
