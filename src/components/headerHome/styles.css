@@ -1,9 +1,10 @@
 .headerHome {
-	height: 15vh;
+	height: 15%;
 	background-color: #ffffff;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	flex-shrink: 0;
 }
 
 .saldoEmConta {
