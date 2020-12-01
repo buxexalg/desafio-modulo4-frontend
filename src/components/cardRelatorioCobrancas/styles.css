@@ -1,0 +1,21 @@
+.CardRelatorioCobrancas td {
+	background-color: #ffffff;
+	padding: 0.8em 3em;
+	color: #4c4c4c;
+}
+
+.CardRelatorioCobrancas td:first-child {
+	border-top-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+}
+
+.CardRelatorioCobrancas td:last-child {
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.CardRelatorioCobrancas button {
+	border: none;
+	background-color: #ffffff;
+	cursor: pointer;
+}

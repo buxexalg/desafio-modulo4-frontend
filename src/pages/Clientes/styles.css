@@ -1,0 +1,32 @@
+.paginaClientes {
+	display: flex;
+	flex-direction: row;
+	height: 100vh;
+	width: 100vw;
+}
+
+.conteudoClientes {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100vh;
+}
+
+.Clientes {
+	display: flex;
+	flex-direction: column;
+	margin-top: 2em;
+	flex: 1;
+}
+
+.buscaClientes {
+	display: flex;
+	margin-right: 10em;
+	justify-content: flex-end;
+}
+
+.buscaClientes form {
+	display: flex;
+	width: 25%;
+	justify-content: flex-end;
+}

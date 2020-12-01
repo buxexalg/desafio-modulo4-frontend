@@ -1,0 +1,17 @@
+.statusPendente > span {
+	font-weight: 600;
+	font-size: 16px;
+	color: #5197b5;
+}
+
+.statusPago > span  {
+	font-weight: 600;
+	font-size: 16px;
+	color: #4ec06e;
+}
+
+.statusVencido > span  {
+	font-weight: 600;
+	font-size: 16px;
+	color: #ff4d4d;
+}
