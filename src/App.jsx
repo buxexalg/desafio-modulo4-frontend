@@ -7,6 +7,8 @@ import { HomePage } from './pages/Home';
 import { Cobrancas } from './pages/Cobrancas';
 import { Clientes } from './pages/Clientes';
 import { CriarCobranca } from './pages/CriarCobranca';
+import { CriarCliente } from './pages/CriarCliente';
+import { EditarCliente } from './pages/EditarCliente';
 
 export const ContextoToken = React.createContext();
 
@@ -19,7 +21,7 @@ export default function App() {
 					<ContextoToken.Provider value={(token, setToken)}>
 						<Route
 							exact
-							path={['/', '/cadastro', '/recuperar-senha']}
+							path={['/', '/cadastro']}
 							component={LoginPage}
 						/>
 						<Route exact path="/home" component={HomePage} />
@@ -30,6 +32,16 @@ export default function App() {
 							component={CriarCobranca}
 						/>
 						<Route exact path="/clientes" component={Clientes} />
+						<Route
+							exact
+							path="/adicionar-cliente"
+							component={CriarCliente}
+						/>
+						<Route
+							exact
+							path="/editar-cliente"
+							component={EditarCliente}
+						/>
 						{/* <Route path="*" render={() => <h1>404</h1>} /> */}
 					</ContextoToken.Provider>
 				</Switch>
