@@ -1,0 +1,11 @@
+.statusEmDia {
+	font-weight: 600;
+	font-size: 16px;
+	color: #4ec06e;
+}
+
+.statusInadimplente {
+	font-weight: 600;
+	font-size: 16px;
+	color: #ff4d4d;
+}
