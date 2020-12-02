@@ -3,8 +3,8 @@ import './styles.css';
 
 export function BotaoLogin(props) {
 	return (
-		<button id={props.id} className="botaoLogin" type="submit">
-			{props.conteudo}
+		<button id={props.id} className="botaoLogin" type="submit" disabled={props.disable}>
+			{props.conteudo} {/* Redirect on submit */}
 		</button>
 	);
 }
