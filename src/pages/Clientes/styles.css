@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: row;
 	height: 100vh;
-	width: 100vw;
+	width: 100%;
 }
 
 .conteudoClientes {
@@ -10,23 +10,75 @@
 	flex-direction: column;
 	width: 100%;
 	height: 100vh;
+	overflow-y: auto;
 }
 
 .Clientes {
 	display: flex;
 	flex-direction: column;
 	margin-top: 2em;
-	flex: 1;
 }
 
 .buscaClientes {
 	display: flex;
 	margin-right: 10em;
-	justify-content: flex-end;
+	margin-left: 10em;
+	justify-content: space-between;
 }
 
 .buscaClientes form {
 	display: flex;
 	width: 25%;
 	justify-content: flex-end;
+}
+
+/* aaaaaaa */
+
+.conteudoListaDeClientes {
+	margin-right: 10em;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.headerListaDeClientes {
+	background: #9dbbc3;
+	border-radius: 8px;
+	color: #ffffff;
+	font-size: 14px;
+	width: 90%;
+	margin: 4em 0 0 0;
+}
+
+.headerListaDeClientes tr {
+	width: 100%;
+	justify-content: space-between;
+	display: flex;
+	margin-right: 15em;
+}
+
+.headerListaDeClientes table {
+	display: flex;
+	padding: 0.3em 4em;
+}
+
+.headerListaDeClientes th:nth-child(2) {
+	padding-left: 3em;
+}
+
+.headerListaDeClientes th:nth-child(3) {
+	margin-left: -5em;
+}
+
+.headerListaDeClientes th:nth-child(4) {
+	margin-right: 5em;
+}
+
+.clientesListaDeClientes {
+	width: 90%;
+}
+
+.clientesListaDeClientes table {
+	width: 100%;
+	border-spacing: 0 1em;
 }

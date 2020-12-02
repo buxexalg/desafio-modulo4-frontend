@@ -4,7 +4,9 @@
 	border-radius: 8px;
 	display: flex;
 	align-items: center;
-	padding: 1.25em 0.8em
+	padding: 1.25em 0.8em;
+	text-decoration: none;
+	color: #323232;
 }
 
 .botaoDeslogar span {
