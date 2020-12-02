@@ -9,6 +9,7 @@ import './styles.css';
 import { ContextoToken } from '../../App';
 import { NavBar } from '../../components/navBar/navBar';
 import { InputBusca } from '../../components/inputBusca/inputBusca';
+import { CardRelatorioClientes } from '../../components/cardRelatorioClientes/cardRelatorioClientes';
 
 export function Clientes() {
 	const { token, setToken } = React.useContext(ContextoToken);
@@ -21,6 +22,12 @@ export function Clientes() {
 				<HeaderHome />
 				<div className="Clientes">
 					<div className="buscaClientes">
+						<a
+							href="/adicionar-cliente"
+							className="botaoAdicionarCliente"
+						>
+							Adicionar Cliente
+						</a>
 						<form
 							onSubmit={handleSubmit((dados, event) => {
 								console.log(dados);
@@ -36,7 +43,114 @@ export function Clientes() {
 						</form>
 					</div>
 					<div className="conteudoListaDeClientes">
-						<div className="headerListaDeClientes"></div>
+						<div className="headerListaDeClientes">
+							<table>
+								<tr>
+									<th>Cliente</th>
+									<th>Cobranças Feitas</th>
+									<th>Cobranças Recebidas</th>
+									<th>Status</th>
+								</tr>
+							</table>
+						</div>
+						<div className="clientesListaDeClientes">
+							<table>
+								<CardRelatorioClientes
+									nome="Aloalo Quem sou eu"
+									email="email@email.com"
+									telefone="+55 (71) 992216810"
+									cobrancasFeitas="100000"
+									cobrancasRecebidas="10000000000"
+									status="EM DIA"
+								/>
+								<CardRelatorioClientes
+									nome="Aloalo Quem sou eu"
+									email="email@email.com"
+									telefone="+55 (71) 992216810"
+									cobrancasFeitas="100000"
+									cobrancasRecebidas="10000000000"
+									status="INADIMPLENTE"
+								/>
+								<CardRelatorioClientes
+									nome="Aloalo Quem sou eu"
+									email="email@email.com"
+									telefone="+55 (71) 992216810"
+									cobrancasFeitas="100000"
+									cobrancasRecebidas="10000000000"
+									status="EM DIA"
+								/>
+								<CardRelatorioClientes
+									nome="Aloalo Quem sou eu"
+									email="email@email.com"
+									telefone="+55 (71) 992216810"
+									cobrancasFeitas="100000"
+									cobrancasRecebidas="10000000000"
+									status="EM DIA"
+								/>
+								<CardRelatorioClientes
+									nome="Aloalo Quem sou eu"
+									email="email@email.com"
+									telefone="+55 (71) 992216810"
+									cobrancasFeitas="100000"
+									cobrancasRecebidas="10000000000"
+									status="INADIMPLENTE"
+								/>
+								<CardRelatorioClientes
+									nome="Aloalo Quem sou eu"
+									email="email@email.com"
+									telefone="+55 (71) 992216810"
+									cobrancasFeitas="100000"
+									cobrancasRecebidas="10000000000"
+									status="EM DIA"
+								/>
+								<CardRelatorioClientes
+									nome="Aloalo Quem sou eu"
+									email="email@email.com"
+									telefone="+55 (71) 992216810"
+									cobrancasFeitas="100000"
+									cobrancasRecebidas="10000000000"
+									status="EM DIA"
+								/>
+								<CardRelatorioClientes
+									nome="Aloalo Quem sou eu"
+									email="email@email.com"
+									telefone="+55 (71) 992216810"
+									cobrancasFeitas="100000"
+									cobrancasRecebidas="10000000000"
+									status="INADIMPLENTE"
+								/>
+								<CardRelatorioClientes
+									nome="Aloalo Quem sou eu"
+									email="email@email.com"
+									telefone="+55 (71) 992216810"
+									cobrancasFeitas="100000"
+									cobrancasRecebidas="10000000000"
+									status="EM DIA"
+								/>
+								<CardRelatorioClientes
+									nome="Aloalo Quem sou eu"
+									email="email@email.com"
+									telefone="+55 (71) 992216810"
+									cobrancasFeitas="100000"
+									cobrancasRecebidas="10000000000"
+									status="INADIMPLENTE"
+								/>
+							</table>
+						</div>
+					</div>
+					<div className="paginacao">
+						<div>
+							<span>{'<'}</span>
+							<span>1</span>
+							<span>1</span>
+							<span>1</span>
+							<span>1</span>
+							<span>1</span>
+							<span>1</span>
+							<span>1</span>
+							<span>1</span>
+							<span>{'>'}</span>
+						</div>
 					</div>
 				</div>
 			</div>
