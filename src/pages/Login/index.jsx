@@ -52,10 +52,6 @@ export function LoginPage() {
 							setSenhaExposta={setSenhaExposta}
 							register={register}
 						/>
-
-						<Link to="/recuperar-senha" className="esqueciSenha">
-							Esqueci minha senha
-						</Link>
 						<BotaoLogin conteudo="Entrar" />
 					</form>
 				)}
@@ -100,26 +96,6 @@ export function LoginPage() {
 						<BotaoLogin conteudo="Criar conta" />
 					</form>
 				)}{' '}
-				{currentPath === '/recuperar-senha' && (
-					<form
-						onSubmit={handleSubmit((dados) => {
-							console.log(dados);
-						})}
-					>
-						<p className="informacaoResetarSenha">
-							Informe o e-mail associado a sua conta e vamos te
-							enviar instruções para resetar sua senha
-						</p>
-						<InputLogin
-							label="E-mail"
-							type="email"
-							name="email"
-							placeholder="exemplo@gmail.com"
-							register={register}
-						/>
-						<BotaoLogin conteudo="Recuperar senha" />
-					</form>
-				)}
 			</div>
 
 			<div className="cadastreSe">
