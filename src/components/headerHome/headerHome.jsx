@@ -6,6 +6,8 @@ import { CardSaldoEmConta } from '../cardSaldoEmConta/cardSaldoEmConta';
 import './styles.css';
 
 export function HeaderHome() {
+
+
 	return (
 		<div className="headerHome">
 			<CardSaldoEmConta />
