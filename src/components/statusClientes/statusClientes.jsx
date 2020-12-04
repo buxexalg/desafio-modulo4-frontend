@@ -6,13 +6,13 @@ import pago from '../../assets/images/pago.png';
 import './styles.css';
 
 export function StatusClientes(props) {
-	if (props.status === 'EM DIA') {
+	if (!props.status) {
 		return (
 			<td>
 				<span className="statusEmDia">EM DIA</span>
 			</td>
 		);
-	} else if (props.status === 'INADIMPLENTE') {
+	} else if (props.status) {
 		return (
 			<td>
 				<span className="statusInadimplente">INADIMPLENTE</span>
