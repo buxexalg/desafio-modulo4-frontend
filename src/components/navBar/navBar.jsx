@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { LinkNav } from '../linkNav/linkNav';
-import { BotaoLogin } from '../../components/botaoLogin/botaoLogin';
+import { BotaoRedirect } from '../../components/botaoRedirect/botaoRedirect';
 
 import logo from '../../assets/images/logo-branca.png';
 import clientes from '../../assets/images/clientes.png';
@@ -38,9 +38,10 @@ export function NavBar() {
 						/>
 					</ul>
 				</nav>
-				<Link to="/criar-cobranca" id="containerBotao">
-					<BotaoLogin id="botaoCobranca" conteudo="Criar cobrança" />
-				</Link>
+				<BotaoRedirect
+					link="/criar-cobranca"
+					conteudo="Criar cobrança"
+				/>
 			</div>
 		</div>
 	);
