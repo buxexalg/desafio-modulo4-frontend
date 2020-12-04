@@ -20,7 +20,10 @@
 }
 
 .linkNav:active {
-	background-color: #6C8FA0;
+	background-color: #6c8fa0;
 	cursor: pointer;
 }
 
+.botaoRedirect {
+	align-self: center;
+}
