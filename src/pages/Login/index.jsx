@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, Redirect } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
 import { BotaoLogin } from '../../components/botaoLogin/botaoLogin';
@@ -8,14 +8,25 @@ import { fazerRequisicaoComBody } from '../../utils/requisicoes';
 
 import logo from '../../assets/images/logo.png';
 import './styles.css';
-import { ContextoToken } from '../../App';
+import { LoginContainer } from '../../App';
+
+require('dotenv').config();
 
 export function LoginPage() {
 	const currentPath = useLocation().pathname;
 	const [senhaExposta, setSenhaExposta] = React.useState(false);
-	const { token, setToken } = React.useContext(ContextoToken);
+	const { login, apiURL } = LoginContainer.useContainer();
 
-	const { register, handleSubmit } = useForm();
+	const { register, handleSubmit, errors, trigger, reset } = useForm({
+		mode: 'all',
+	});
+
+	const nomeInputRef = React.useRef();
+	const emailInputRef = React.useRef();
+
+	React.useEffect(() => trigger(), [trigger]);
+
+	const qtdErros = Object.keys(errors).length;
 
 	return (
 		<div className="main">
@@ -24,16 +35,8 @@ export function LoginPage() {
 				{currentPath === '/' && (
 					<form
 						onSubmit={handleSubmit(async (dados) => {
-							console.log(dados);
-							fazerRequisicaoComBody(
-								'https://cubos-desafio-4.herokuapp.com/auth',
-								'POST',
-								dados
-							)
-								.then((response) => response.json())
-								.then((responseJson) => {
-									setToken(responseJson.dados.token);
-								});
+							await login(dados.email, dados.senha);
+							reset();
 						})}
 					>
 						<InputLogin
@@ -41,7 +44,13 @@ export function LoginPage() {
 							type="email"
 							name="email"
 							placeholder="exemplo@email.com"
-							register={register}
+							register={(element) => {
+								emailInputRef.current = element;
+								register({
+									required: true,
+									validate: () => element.checkValidity(),
+								})(element);
+							}}
 						/>
 						<InputLogin
 							label="Senha"
@@ -50,16 +59,16 @@ export function LoginPage() {
 							placeholder={null}
 							senhaExposta={senhaExposta}
 							setSenhaExposta={setSenhaExposta}
-							register={register}
+							register={register({ required: true })}
 						/>
-						<BotaoLogin conteudo="Entrar" />
+						<BotaoLogin conteudo="Entrar" disable={qtdErros > 0} />
 					</form>
 				)}
 				{currentPath === '/cadastro' && (
 					<form
 						onSubmit={handleSubmit(async (dados) => {
 							fazerRequisicaoComBody(
-								'https://cubos-desafio-4.herokuapp.com/auth',
+								apiURL + '/usuarios',
 								'POST',
 								dados
 							)
@@ -74,14 +83,26 @@ export function LoginPage() {
 							type="text"
 							name="nome"
 							placeholder={null}
-							register={register}
+							register={(element) => {
+								nomeInputRef.current = element;
+								register({
+									required: true,
+									validate: () => element.checkValidity(),
+								})(element);
+							}}
 						/>
 						<InputLogin
 							label="E-mail"
 							type="email"
 							name="email"
 							placeholder="exemplo@gmail.com"
-							register={register}
+							register={(element) => {
+								emailInputRef.current = element;
+								register({
+									required: true,
+									validate: () => element.checkValidity(),
+								})(element);
+							}}
 						/>
 						<InputLogin
 							label="Senha"
@@ -90,10 +111,13 @@ export function LoginPage() {
 							placeholder={null}
 							senhaExposta={senhaExposta}
 							setSenhaExposta={setSenhaExposta}
-							register={register}
+							register={register({ required: true })}
 						/>
 
-						<BotaoLogin conteudo="Criar conta" />
+						<BotaoLogin
+							conteudo="Criar conta"
+							disable={qtdErros > 0}
+						/>
 					</form>
 				)}{' '}
 			</div>
