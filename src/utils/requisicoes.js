@@ -1,4 +1,4 @@
-function fazerRequisicaoComBody(url, metodo, conteudo, token=null) {
+function fazerRequisicaoComBody(url, metodo, conteudo = null, token) {
 	return fetch(url, {
 		method: metodo,
 		headers: {
