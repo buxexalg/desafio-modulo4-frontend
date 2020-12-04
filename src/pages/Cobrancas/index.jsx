@@ -88,7 +88,7 @@ export function Cobrancas() {
 			<div className="conteudoCobrancas">
 				<HeaderHome />
 				<div className="cobrancas">
-					{/* <div className="buscaCobrancas">
+					<div className="buscaCobrancas">
 						<form
 							onSubmit={handleSubmit((dados, event) => {
 								setBusca(dados.textoDaBusca);
@@ -104,7 +104,7 @@ export function Cobrancas() {
 								register={register}
 							/>
 						</form>
-					</div> */}
+					</div>
 					<div className="conteudoListaDeCobrancas">
 						<div className="headerListaDeCobrancas">
 							<table>
