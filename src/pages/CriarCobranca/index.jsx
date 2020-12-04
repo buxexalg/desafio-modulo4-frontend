@@ -4,12 +4,10 @@ import { fazerRequisicaoComBody } from '../../utils/requisicoes';
 import { useForm } from 'react-hook-form';
 
 import './styles.css';
-import { ContextoToken } from '../../App';
 import { NavBar } from '../../components/navBar/navBar';
 import { BotaoLogin } from '../../components/botaoLogin/botaoLogin';
 
 export function CriarCobranca() {
-	const { token, setToken } = React.useContext(ContextoToken);
 
 	const { register, handleSubmit, errors, trigger } = useForm({
 		mode: 'all',
@@ -52,9 +50,9 @@ export function CriarCobranca() {
 								<option value="" disabled selected>
 									Selecione a cliente
 								</option>
-								<option value="a">a</option>
-								<option value="a">a</option>
-								<option value="a">a</option>
+								<option value="a">Cliente 1</option>
+								<option value="a">Cliente 2</option>
+								<option value="a">Cliente 3</option>
 							</select>
 						</label>
 						<label>

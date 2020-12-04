@@ -4,13 +4,12 @@ import { fazerRequisicaoComBody } from '../../utils/requisicoes';
 import { useForm } from 'react-hook-form';
 
 import './styles.css';
-import { ContextoToken } from '../../App';
+import { LoginContainer } from '../../App';
 import { NavBar } from '../../components/navBar/navBar';
 import { BotaoLogin } from '../../components/botaoLogin/botaoLogin';
+import { BotaoRedirect } from '../../components/botaoRedirect/botaoRedirect';
 
 export function CriarCliente() {
-	const { token, setToken } = React.useContext(ContextoToken);
-
 	const { register, handleSubmit, errors, trigger } = useForm({
 		mode: 'all',
 	});
@@ -24,6 +23,8 @@ export function CriarCliente() {
 
 	const qtdErros = Object.keys(errors).length;
 
+	const { token, apiURL } = LoginContainer.useContainer();
+
 	return (
 		<div className="paginaCriarCliente">
 			<NavBar />
@@ -31,8 +32,15 @@ export function CriarCliente() {
 				<h1>{'// CRIAR CLIENTE'}</h1>
 				<div className="formCriarCliente">
 					<form
-						onSubmit={handleSubmit(async (dados) => {
+						onSubmit={handleSubmit((dados, event) => {
 							console.log(dados);
+							fazerRequisicaoComBody(
+								apiURL + '/clientes',
+								'POST',
+								dados,
+								token
+							);
+							event.target.reset();
 						})}
 					>
 						<label>
@@ -96,10 +104,10 @@ export function CriarCliente() {
 							</label>
 						</div>
 						<div className="botoesCriarCliente">
-							<a href="/home">Cancelar</a>
+							<BotaoRedirect link="/home" conteudo="Cancelar" />
 							<BotaoLogin
-								disable={qtdErros > 0}
 								conteudo="Criar cobrança"
+								disable={qtdErros > 0}
 							/>
 						</div>
 					</form>
